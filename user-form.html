@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+</head>
+<body>
+
+<h2>User Form</h2>
+
+<form th:action="@{/users/update}"
+      th:object="${user}"
+      method="post">
+
+    <!-- Hidden ID for update -->
+    <input type="hidden" th:field="*{id}" />
+
+    <label>First Name:</label>
+    <input type="text" th:field="*{firstName}" />
+    <br><br>
+
+    <label>Last Name:</label>
+    <input type="text" th:field="*{lastName}" />
+    <br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+<a th:href="@{/users}">⬅ Back to list</a>
+
+</body>
+</html>
